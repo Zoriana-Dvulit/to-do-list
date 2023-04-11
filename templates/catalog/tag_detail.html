@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ tag.name }}</h1>
+  <ul>
+    {% for task in tag.task_set.all %}
+      <li>{{ task.content }} ({{ task.created_at }}) <a href="{% url "catalog:task-detail" task.id %}">Details</a></li>
+    {% empty %}
+      <li>No tasks associated with this tag.</li>
+    {% endfor %}
+  </ul>
+  
+  <a href="{% url "catalog:tag-update" tag.id %}">Update</a>
+  <a href="{% url "catalog:tag-delete" tag.id %}">Delete</a>
+{% endblock %}

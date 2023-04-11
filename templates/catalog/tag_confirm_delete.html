@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Delete tag?</h1>
-  <form action="" method="post">
-    {% csrf_token %}
-
-    <input type="submit" value="Yes" class="btn btn-danger">
-  </form>
+<h1>Delete Tag "{{ tag.name }}"</h1>
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete "{{ tag.name }}" tag?</p>
+  <input type="submit" value="Confirm">
+  <a href="{% url "catalog:tag-list" %}">Cancel</a>
+</form>
 {% endblock %}

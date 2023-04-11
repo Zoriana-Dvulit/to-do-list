@@ -1,22 +1,36 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>
-    Car list
-    <a href="{% url 'catalog:tag-create' %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
-  </h1>
-{#  {% if car_list %}#}
-{#    <ul>#}
-{#      {% for car in car_list %}#}
-{#        <li>#}
-{#          <a href="{% url "taxi:car-detail" pk=car.id %} ">{{ car.id }}</a>#}
-{#          {{ car.model }} ({{ car.manufacturer.name }})#}
-{#        </li>#}
-{#      {% endfor %}#}
-{#    </ul>#}
-{#  {% else %}#}
-{#    <p>There are no cars in taxi</p>#}
-{#  {% endif %}#}
+  <div style="float: left;">
+    <h1>Tags</h1>
+    <br>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tag in tags %}
+      <tr>
+        <td>{{ tag.name }}</td>
+        <td></td>
+        <td><a href="{% url "catalog:tag-update" tag.pk %}">Update</a></td>
+        <td><a href="{% url "catalog:tag-delete" tag.pk %}">Delete</a></td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="4">No tags found.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+  </div>
+  <div style="float: right;">
+    <br>
+    <button style="background-color: #00ADEF; color: white;">Add tag</button><br><br>
+  </div>
 {% endblock %}

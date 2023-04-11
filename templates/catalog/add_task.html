@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
-
+<p> </p>
 {% block content %}
-  <h1>{{ form_title }}</h1>
+  <h2>Add New Task</h2>
   <form method="post">
     {% csrf_token %}
     {{ form|crispy }}
-    <input type="submit" value="Save">
+    <button type="submit">Add Task</button>
   </form>
 {% endblock %}

@@ -6,3 +6,11 @@ body {
     float: right;
     margin: 0 2px 0 2px;
 }
+
+tr {
+  padding: 20px 0;
+}
+td.created {
+  font-size: smaller;
+  font-weight: bold;
+}
