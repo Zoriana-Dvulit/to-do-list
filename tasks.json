@@ -7,7 +7,7 @@
             "created_date": "2022-04-11T12:00:00Z",
             "due_date": "2023-04-14T11:25:00Z",
             "done": "True",
-            "tags": ["work"]
+            "tags": []
         }
     },
     {
@@ -18,7 +18,7 @@
             "created_date": "2022-04-11T12:30:00Z",
             "due_date": "2023-04-15T10:40:00Z",
             "done": "False",
-            "tags": ["home"]
+            "tags": []
         }
     }
 ]
