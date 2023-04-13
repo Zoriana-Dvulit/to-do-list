@@ -1,24 +1,56 @@
 [
     {
-        "model": "catalog.task",
-        "pk": 8,
+        "model": "auth.user",
+        "pk": 1,
         "fields": {
-            "content": "Prepare speach for conference",
-            "created_date": "2022-04-11T12:00:00Z",
-            "due_date": "2023-04-14T11:25:00Z",
-            "done": "True",
-            "tags": ["work"],
+            "password": "pbkdf2_sha256$260000$u5nddD5nYFyfS1zd2b/rHg$cqV/ZpAmi4/B4Z4e1Rc31/xVdpTgTtyr6rLuR1Rkzto=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "testuser",
+            "first_name": "",
+            "last_name": "",
+            "email": "testuser@example.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-04-11T12:00:00Z",
+            "groups": [],
+            "user_permissions": []
         }
     },
     {
         "model": "catalog.task",
-        "pk": 10,
+        "pk": 1,
+        "fields": {
+            "content": "Prepare speech for conference",
+            "created_date": "2022-04-11T12:00:00Z",
+            "due_date": "2023-04-14T11:25:00Z",
+            "done": false,
+            "tags": ["conference"],
+            "user": 1
+        }
+    },
+    {
+        "model": "catalog.task",
+        "pk": 2,
         "fields": {
             "content": "Bake the Easter Passover",
             "created_date": "2022-04-11T12:30:00Z",
             "due_date": "2023-04-15T10:40:00Z",
-            "done": "False",
-            "tags": ["Ivan"]
+            "done": false,
+            "tags": ["Ivan"],
+            "user": 1
+        }
+    },
+    {
+        "model": "catalog.task",
+        "pk": 3,
+        "fields": {
+            "content": "Finish project report",
+            "created_date": "2022-04-11T14:30:00Z",
+            "due_date": "2023-04-16T13:45:00Z",
+            "done": false,
+            "tags": ["report"],
+            "user": 1
         }
     }
 ]
