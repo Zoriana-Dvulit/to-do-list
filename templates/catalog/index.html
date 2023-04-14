@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <div style="float: left;">
+    <h1>Todo list</h1>
+    <br>
+    <table>
+      <thead>
+        <tr></tr>
+      </thead>
+      <tbody>
+        {% for task in tasks %}
+          <tr class="{% if task.done %}done{% endif %}">
+            <td><strong class="font-size-20 mr-3">{{ task.content }}</strong></td>
+            <td>
+              {% if task.done %}
+                <span style="color: green; font-weight: bold;">Done</span>
+              {% else %}
+                <span style="color: red; font-weight: bold;">Not done</span>
+              {% endif %}
+            </td>
+            <tr>
+              <td class="created">Created:</td>
+              <td>{{ task.created_date }}</td>
+            </tr>
+            <tr>
+              <td class="tags" style="color: grey;">Tags:</td>
+              <td>
+                {% for tag in task.tags.all %}
+                  {{ tag.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+              </td>
+            </tr>
+            <td>
+              <a href="{% url "catalog:task-update" task.pk %}">Update</a>
+              <a href="{% url "catalog:task-delete" task.pk %}">Delete</a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="5">No tasks found.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div style="float: right;">
+    <br>
+    <button style="background-color: #00ADEF; color: white;">Add task</button><br><br>
+    <button style="background-color: green; color: white;">Complete</button><br><br>
+    <button style="background-color: grey; color: white;">Undo</button><br><br>
+  </div>
+{% endblock %}

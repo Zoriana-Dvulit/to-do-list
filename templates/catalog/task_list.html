@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>Content</th>
+                <th>Date/Time Created</th>
+                <th>Deadline</th>
+                <th>Done</th>
+                <th>Tags</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in task_list %}
+            <tr>
+                <td>{{ task.content }}</td>
+                <td>{{ task.created_date }}</td>
+                <td>{{ task.due_date }}</td>
+                <td>{{ task.done }}</td>
+                <td>
+                    {% for tag in task.tags.all %}
+                        <span class="tag">{{ tag.name }}</span>
+                    {% endfor %}
+                </td>
+                <td><a href="{% url "catalog:task-update" task.id %}">Update</a></td>
+                <td><a href="{% url "catalog:task-delete" task.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url "catalog:task-create" %}">Add New Task</a>
+{% endblock %}

@@ -1,3 +1,11 @@
+venv
+**__pycache__
+db.sqlite3
+*.pyc
+.env
 .idea
+<<<<<<< HEAD
 venv
  __pycache__
+=======
+>>>>>>> develop2
