@@ -24,9 +24,7 @@
             "content": "Prepare speech for conference",
             "created_date": "2022-04-11T12:00:00Z",
             "due_date": "2023-04-14T11:25:00Z",
-            "done": false,
-            "tags": [1],
-            "user": 1
+            "done": false
         }
     },
     {
@@ -36,9 +34,7 @@
             "content": "Bake the Easter Passover",
             "created_date": "2022-04-11T12:30:00Z",
             "due_date": "2023-04-15T10:40:00Z",
-            "done": false,
-            "tags": [2],
-            "user": 1
+            "done": false
         }
     },
     {
@@ -49,8 +45,16 @@
             "created_date": "2022-04-11T14:30:00Z",
             "due_date": "2023-04-16T13:45:00Z",
             "done": false,
-            "tags": [1],
-            "user": 1
+            "user": 1,
+            "tags": [
+                {
+                    "model": "catalog.tag",
+                    "pk": 1,
+                    "fields": {
+                        "name": "work"
+                    }
+                }
+            ]
         }
     }
 ]
