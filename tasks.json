@@ -18,6 +18,13 @@
         }
     },
     {
+        "model": "catalog.tag",
+        "pk": 1,
+        "fields": {
+            "name": "work"
+        }
+    },
+    {
         "model": "catalog.task",
         "pk": 1,
         "fields": {
@@ -45,16 +52,7 @@
             "created_date": "2022-04-11T14:30:00Z",
             "due_date": "2023-04-16T13:45:00Z",
             "done": false,
-            "user": 1,
-            "tags": [
-                {
-                    "model": "catalog.tag",
-                    "pk": 1,
-                    "fields": {
-                        "name": "work"
-                    }
-                }
-            ]
+            "tags": [1]
         }
     }
 ]
